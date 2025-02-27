@@ -63,6 +63,14 @@ pipeline{
                 }
             }
         }
+        stage('Dynamic'){
+            when{
+                branch 'feature/dynamic'
+            }
+            steps{
+                echo("DYNAMIC STAGE")
+            }
+        }
         stage('Tests'){
             when{
                 equals expected: true,
